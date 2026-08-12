@@ -1,0 +1,229 @@
+/* =========================================
+   BACKYARD HARVEST HUB
+   Shared Website Stylesheet
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #243126;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+a {
+  color: #397c2d;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-topbar {
+  background: #0b4d2b;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.site-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e3e8e3;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-brand {
+  font-size: 20px;
+  font-weight: 800;
+  color: #173d24;
+  text-decoration: none;
+}
+
+.site-brand span {
+  color: #4f982d;
+}
+
+.site-nav a {
+  color: #4d5c50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.article-hero {
+  background: #f1f7ed;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.article-hero-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.article-category {
+  color: #4f8d36;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+.article-hero h1 {
+  color: #173d24;
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1.1;
+  margin: 15px 0 20px;
+}
+
+.article-subtitle {
+  color: #617064;
+  font-size: 19px;
+  max-width: 720px;
+  margin: auto;
+}
+
+.article-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 60px 25px;
+}
+
+.article-container .intro {
+  font-size: 19px;
+  color: #4e5b51;
+}
+
+.article-container h2 {
+  color: #173d24;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-top: 55px;
+}
+
+.article-container h3 {
+  color: #285d32;
+  font-size: 23px;
+  margin-top: 38px;
+}
+
+.article-container p {
+  margin: 18px 0;
+}
+
+.tip-box {
+  background: #f3f7f0;
+  border-left: 4px solid #67a544;
+  padding: 20px 22px;
+  margin: 30px 0;
+}
+
+.info-box {
+  background: #fafbfa;
+  border: 1px solid #e2e7e2;
+  padding: 25px 30px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.info-box li {
+  margin: 9px 0;
+}
+
+.article-card {
+  border: 1px solid #e1e7e0;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 25px 0;
+}
+
+.article-card h3 {
+  margin-top: 0;
+}
+
+.cta-box {
+  background: #103d25;
+  color: #ffffff;
+  padding: 45px 25px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 55px 0 20px;
+}
+
+.cta-box h2 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.cta-box p {
+  color: #d8e5da;
+  max-width: 650px;
+  margin: 15px auto 25px;
+}
+
+.button {
+  display: inline-block;
+  background: #69b932;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 14px 24px;
+  border-radius: 7px;
+}
+
+.button:hover {
+  background: #579c2a;
+}
+
+.related-box {
+  background: #f2f7ef;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 45px;
+}
+
+.site-footer {
+  background: #092619;
+  color: #ffffff;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.site-footer a {
+  color: #c8dfbd;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.site-footer p {
+  color: #aebcaf;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+
+  .site-nav {
+    padding: 18px 5%;
+  }
+
+  .site-nav a {
+    font-size: 13px;
+  }
+
+  .article-container {
+    padding: 45px 20px;
+  }
+
+}
