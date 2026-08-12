@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Backyard Harvest Hub | Grow Your Own Food</title>
+
+  <meta name="description" content="Beginner-friendly gardening guides, backyard projects, vegetable growing tips, and practical resources for growing more food at home.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172018;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .topbar {
+      background: #0b4d2b;
+      color: white;
+      padding: 9px 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .navbar {
+      background: white;
+      border-bottom: 1px solid #e8ece8;
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      line-height: 1.05;
+      font-size: 21px;
+    }
+
+    .logo-icon {
+      font-size: 38px;
+    }
+
+    .logo span {
+      color: #2f8f20;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #2f8f20;
+    }
+
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(5,35,19,.88), rgba(5,35,19,.50)),
+        url("https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      color: white;
+      padding: 70px 7%;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 650px;
+      margin-bottom: 32px;
+      color: #f2f7f2;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #67b82f;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #559e25;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #173b25;
+    }
+
+    .features {
+      max-width: 1250px;
+      margin: -40px auto 0;
+      position: relative;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 35px rgba(0,0,0,.08);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 32px;
+      gap: 30px;
+    }
+
+    .feature {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      font-size: 37px;
+    }
+
+    .feature h3 {
+      margin-bottom: 5px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      color: #667067;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    .section-heading {
+      max-width: 1250px;
+      margin: 0 auto 35px;
+    }
+
+    .section-heading h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: #657067;
+      max-width: 700px;
+    }
+
+    .articles {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      border: 1px solid #e4e9e4;
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .card-image {
+      height: 190px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8f5df;
+      color: #3e821f;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 9px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 19px;
+      line-height: 1.3;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: #697269;
+      font-size: 14px;
+    }
+
+    .guide {
+      max-width: 1250px;
+      margin: auto;
+      background: #f3f8ef;
+      border-radius: 15px;
+      padding: 45px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .guide-cover {
+      background: #163d24;
+      color: white;
+      min-height: 330px;
+      border-radius: 8px;
+      padding: 35px 25px;
+      box-shadow: 10px 12px 0 #c7d7bd;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .guide-cover small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      color: #bde4a8;
+    }
+
+    .guide-cover strong {
+      font-size: 30px;
+      line-height: 1.15;
+    }
+
+    .guide h2 {
+      font-size: 39px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .guide p {
+      color: #5e695f;
+      margin-bottom: 20px;
+      max-width: 650px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .check-list li {
+      margin: 9px 0;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: #4c9c25;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .newsletter {
+      background: #103d25;
+      color: white;
+      text-align: center;
+    }
+
+    .newsletter-inner {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .newsletter h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .newsletter p {
+      color: #d8e6da;
+      margin-bottom: 25px;
+    }
+
+    .email-form {
+      display: flex;
+      max-width: 580px;
+      margin: auto;
+      gap: 10px;
+    }
+
+    .email-form input {
+      flex: 1;
+      padding: 15px;
+      border-radius: 7px;
+      border: none;
+      font-size: 15px;
+    }
+
+    .email-form button {
+      border: none;
+      cursor: pointer;
+      padding: 15px 22px;
+      border-radius: 7px;
+      background: #69b932;
+      color: white;
+      font-weight: bold;
+    }
+
+    .disclosure {
+      max-width: 950px;
+      margin: auto;
+      padding: 25px;
+      background: #f6f7f6;
+      border-radius: 8px;
+      color: #697169;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer {
+      background: #092619;
+      color: white;
+      padding: 45px 6%;
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer p {
+      color: #b9c7bd;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #7bc94b;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        margin: 0 20px;
+      }
+
+      .articles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guide {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 520px;
+        padding: 55px 7%;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .guide {
+        padding: 25px;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    🌱 Grow Your Own Food. Live Better. Save More.
+  </div>
+
+  <nav class="navbar">
+
+    <a href="#" class="logo">
+      <div class="logo-icon">🌿</div>
+      <div>
+        Backyard
+        <span>Harvest Hub</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#articles">Gardening Tips</a>
+      <a href="#articles">Vegetable Guides</a>
+      <a href="#projects">DIY Projects</a>
+      <a href="#guide">Product Reviews</a>
+      <a href="#resources">Free Resources</a>
+      <a href="#about">About</a>
+    </div>
+
+  </nav>
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Grow Fresh Food at Home—
+        Even If You're Starting From Scratch
+      </h1>
+
+      <p>
+        Practical gardening guides, beginner-friendly tips,
+        and simple backyard projects to help you grow more food
+        with confidence.
+      </p>
+
+      <div class="buttons">
+        <a href="#articles" class="btn btn-primary">
+          Start Learning
+        </a>
+
+        <a href="#guide" class="btn btn-secondary">
+          See Popular Guides
+        </a>
+      </div>
+
+    </div>
+
+  </header>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="feature-icon">🌱</div>
+      <div>
+        <h3>Vegetable Gardening</h3>
+        <p>
+          Step-by-step guides to help beginners grow healthy vegetables.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🏡</div>
+      <div>
+        <h3>Backyard Projects</h3>
+        <p>
+          Simple DIY projects to improve your garden and save money.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🥕</div>
+      <div>
+        <h3>Food Self-Sufficiency</h3>
+        <p>
+          Learn practical skills for becoming more self-reliant.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <section id="articles">
+
+    <div class="section-heading">
+      <h2>Latest Gardening Guides</h2>
+      <p>
+        Simple, practical information for people who want to grow
+        more food at home.
+      </p>
+    </div>
+
+    <div class="articles">
+
+      <article class="card">
+        <img
+          class="card-image"
+          src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&w=900&q=80"
+          alt="Fresh vegetables growing in a garden"
+        >
+
+        <div class="card-content">
+          <span class="tag">VEGETABLES</span>
+          <h3>10 Vegetables Every Beginner Should Grow</h3>
+          <p>
+            Discover easy vegetables that are great for starting your first garden.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          class="card-image"
+          src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80"
+          alt="Person making compost"
+        >
+
+        <div class="card-content">
+          <span class="tag">COMPOSTING</span>
+          <h3>Beginner Composting: An Easy Guide</h3>
+          <p>
+            Learn the basics of turning everyday organic waste into useful compost.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          class="card-image"
+          src="https://images.unsplash.com/photo-1599685315640-0c0b9f5a7f3f?auto=format&fit=crop&w=900&q=80"
+          alt="Raised garden beds"
+        >
+
+        <div class="card-content">
+          <span class="tag">RAISED BEDS</span>
+          <h3>Raised Beds vs. In-Ground Gardening</h3>
+          <p>
+            Understand the differences and decide which option suits your garden.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          class="card-image"
+          src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=900&q=80"
+          alt="Tomatoes growing in a garden"
+        >
+
+        <div class="card-content">
+          <span class="tag">VEGETABLES</span>
+          <h3>How to Grow Tomatoes Like a Pro</h3>
+          <p>
+            Simple tips for planting, watering, supporting, and caring for tomatoes.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section id="guide">
+
+    <div class="guide">
+
+      <div class="guide-cover">
+        <small>Featured Guide</small>
+        <strong>
+          The Self-Sufficient Backyard
+        </strong>
+        <div style="font-size:55px;margin-top:25px;">
+          🌱🥕
+        </div>
+      </div>
+
+      <div>
+
+        <h2>
+          Want to Learn More About Growing Your Own Food?
+        </h2>
+
+        <p>
+          We're researching practical gardening resources for beginners,
+          including guides covering backyard food production,
+          gardening projects, and self-sufficiency.
+        </p>
+
+        <ul class="check-list">
+          <li>Beginner-friendly gardening information</li>
+          <li>Backyard food-growing ideas</li>
+          <li>Practical DIY projects</li>
+          <li>Ideas for becoming more self-reliant</li>
+        </ul>
+
+        <!-- REPLACE THE URL BELOW WITH YOUR DIGISTORE24 AFFILIATE LINK -->
+        <a
+          href="YOUR_DIGISTORE24_AFFILIATE_LINK"
+          class="btn btn-primary"
+          target="_blank"
+          rel="nofollow sponsored noopener"
+        >
+          View the Guide →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="projects">
+
+    <div class="section-heading">
+      <h2>Start With Simple Projects</h2>
+
+      <p>
+        You don't need a huge backyard or years of experience.
+        Start small and build your skills over time.
+      </p>
+    </div>
+
+    <div class="articles">
+
+      <article class="card">
+        <div class="card-content">
+          <span class="tag">PROJECT 01</span>
+          <h3>Build Your First Raised Bed</h3>
+          <p>
+            A simple starting point for growing vegetables in a controlled space.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-content">
+          <span class="tag">PROJECT 02</span>
+          <h3>Start a Compost Bin</h3>
+          <p>
+            Turn suitable kitchen and garden waste into useful organic material.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-content">
+          <span class="tag">PROJECT 03</span>
+          <h3>Create a Container Garden</h3>
+          <p>
+            Grow useful plants even when you have limited outdoor space.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-content">
+          <span class="tag">PROJECT 04</span>
+          <h3>Plan Your First Food Garden</h3>
+          <p>
+            Choose crops and organize your growing space before planting.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section id="resources">
+
+    <div class="section-heading">
+      <h2>Free Resources</h2>
+
+      <p>
+        We're building a collection of simple resources to help beginners
+        get started without feeling overwhelmed.
+      </p>
+    </div>
+
+    <div class="guide">
+
+      <div>
+        <div style="font-size:80px;">
+          📋
+        </div>
+      </div>
+
+      <div>
+        <h2>Beginner Garden Checklist</h2>
+
+        <p>
+          Use this simple checklist when planning your first backyard
+          vegetable garden.
+        </p>
+
+        <ul class="check-list">
+          <li>Choose your growing location</li>
+          <li>Check sunlight throughout the day</li>
+          <li>Decide what you want to grow</li>
+          <li>Prepare your soil or containers</li>
+          <li>Create a basic watering routine</li>
+        </ul>
+
+        <a href="#newsletter" class="btn btn-primary">
+          Get Future Free Resources
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="newsletter" class="newsletter">
+
+    <div class="newsletter-inner">
+
+      <h2>Get Gardening Tips in Your Inbox</h2>
+
+      <p>
+        Join our future newsletter for beginner-friendly gardening tips,
+        guides, and free resources.
+      </p>
+
+      <!-- We'll connect this to a free email service later -->
+      <form class="email-form" onsubmit="return false;">
+
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          required
+        >
+
+        <button type="submit">
+          Subscribe
+        </button>
+
+      </form>
+
+      <p style="font-size:12px;margin-top:12px;">
+        Newsletter signup will be connected to a free email service before launch.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="about">
+
+    <div class="disclosure">
+
+      <strong>Affiliate Disclosure</strong>
+
+      <br><br>
+
+      Backyard Harvest Hub may contain affiliate links.
+      If you purchase a product through one of our links,
+      we may receive a commission at no additional cost to you.
+      We aim to provide useful information and clearly identify
+      affiliate relationships.
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <div class="logo">
+          <div class="logo-icon">🌿</div>
+
+          <div>
+            Backyard
+            <span>Harvest Hub</span>
+          </div>
+        </div>
+
+        <br>
+
+        <p>
+          Practical gardening information for beginners.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#">Home</a>
+        <a href="#articles">Gardening Tips</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">Affiliate Disclosure</a>
+
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:35px;color:#8ea295;font-size:13px;">
+      © 2026 Backyard Harvest Hub. All rights reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>
